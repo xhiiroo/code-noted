@@ -1,0 +1,23 @@
+-- Cara buat license SMART myaccde
+1. Jalankan program license.exe, jika belum ada run/compile project license.dpr
+
+2. Copy kode aktivasi dari dialogbox seperti contoh di bawah ini
+
+---------------------------
+Application Error
+---------------------------
+Exception Exception in module myacc_de.exe at 006F104A.
+File Lic.ini tidak sesuai !
+Kode aktivasi: 9F-CF-9F-E4-D2-56-CD-8D.
+
+---------------------------
+OK   
+---------------------------
+
+3. Paste ke kolom no. seri dan pasang waktu trial sebanyak berapa hari yang di inginkan kemudian prog. no isi dengan angka 14
+
+4. Klik set dan masukkan password BM2012 dan tentukan direktori penyimpanan untuk save file lic.ini tersebut
+
+5. Pindahkan file lic.ini ke dalam folder tempat menyimpan program SMART myaccde
+
+6. Jalankan program myaccde dan pilih opsi 2. i already have database kemudian isi password 11654708
