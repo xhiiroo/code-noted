@@ -1,5 +1,4 @@
 -- Menampilkan list BP pada import recieve bill
-
 SELECT
 m.nosj,
 m.ontransit,
