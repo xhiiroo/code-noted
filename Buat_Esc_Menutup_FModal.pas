@@ -8,3 +8,7 @@ begin
     Close;
   end;
 end;
+
+(* Tambahkan ke formcreate *)
+(* Untuk membuat kode FormKeyDown dapat dijalankan walaupun fokus ada pada komponen lain *)
+KeyPreview := True;
