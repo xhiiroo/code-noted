@@ -14,7 +14,7 @@ Kode aktivasi: 9F-CF-9F-E4-D2-56-CD-8D.
 OK   
 ---------------------------
 
-3. Paste ke kolom no. seri dan pasang waktu trial sebanyak berapa hari yang di inginkan kemudian prog. no isi dengan angka 14
+3. Paste ke kolom no. seri dan pasang waktu trial sebanyak berapa hari yang di inginkan kemudian prog. no isi dengan angka => isdeluxe := (productno=0) or (productno >= 20);
 
 4. Klik set dan masukkan password BM2012 dan tentukan direktori penyimpanan untuk save file lic.ini tersebut
 
