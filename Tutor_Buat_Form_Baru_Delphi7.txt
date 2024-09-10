@@ -1,0 +1,6 @@
+TUTORIAL BUAT FORM BARU DELPHI 7 DARI DUPLIKASI FORM LAIN YANG SUDAH ADA
+
+1. Remove form project terlebih dahulu form yang akan di copy
+2. Setelah itu copypaste & rename extensi file .dfm dan .pas
+3. Kemudian Add to project form tsb dan modifikasi
+4. Save setelah modifikasi sudah selesai kemudian add to project kembali form yang di remove sebelumnya
