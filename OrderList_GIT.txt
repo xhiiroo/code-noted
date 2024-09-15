@@ -1,0 +1,36 @@
+// Daftar Perintah Git
+
+1. Membuat Graph
+alias graph="git log --all --decorate --oneline --graph"
+
+2. Mengganti username
+git config --global user.name “Nama”
+
+3. Mengganti Email
+git config --global user.email “Em@il”
+
+4. Mengecek username & email saat ini
+git config –list
+
+5. Mengecek username & email saat ini
+git config –list
+
+6. Membuat Branch baru
+git branch *TulisNamaBranch*
+
+7. Berpindah Branch
+git checkout *TulisNamaBranch*
+
+8. Melihat Branch yang sudah dimerged
+git branch –merged
+
+9. Melakukan Merge Branch
+git merge *NamaBranch*
+10. Menghapus Branch
+git branch -d *NamaBranch*
+
+11. Memasuki commit yang sudah berlalu
+git checkout *5DigitNomorCommit*
+
+12. Melihat Perbandingan Perubahan yang Dilakukan pada Revisi
+git diff *5DigitNomorCommit*
