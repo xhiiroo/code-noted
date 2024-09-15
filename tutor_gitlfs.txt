@@ -1,0 +1,9 @@
+// Cara Push/Upload File yang lebih dari 100mb ke github
+
+1. File yang ingin di upload di harapkan belum masuk ke folder/repo project
+2. Apabila sudah terlanjur masuk dan add commit, silahkan hapus saja folder .git jika kondisi project masih baru di init
+3. Inputkan git lfs install dan enter
+4. Inputkan git lfs track "*.NAMA EXT FILE YANG INGIN DI LACAK"
+5. Setelah itu lakukan git add . dan commit seperti biasanya lalu push
+6. Setelah .gitattributes telah masuk ke repo github silahkan masukkan file yang dingin di upload ke dalam folder/repo local kemudian add, commit, push
+Instruksi nomor 3-5 bisa cek lebih lengkap di https://git-lfs.com/
