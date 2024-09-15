@@ -26,6 +26,7 @@ git branch –merged
 
 9. Melakukan Merge Branch
 git merge *NamaBranch*
+
 10. Menghapus Branch
 git branch -d *NamaBranch*
 
@@ -34,3 +35,26 @@ git checkout *5DigitNomorCommit*
 
 12. Melihat Perbandingan Perubahan yang Dilakukan pada Revisi
 git diff *5DigitNomorCommit*
+
+13. Membuka kode editor (yang terdaftar saat instalasi git) pada folder yang di tuju directory
+code .
+
+14. Melihat nama remote yang di gunakan menuju repo milik user github siapa
+git remote -v
+
+15. Membuat remote ke repo user lain agar ketika repo user tsb ada update, maka repo kita juga terupdate
+git remote add origin urlclonegithub
+
+16. Mendaftarkan nama remote dan cek repo user lain yang sudah di buat sebelumnya ke dalam graph kita
+git fetch namaremote
+
+17. Membuat file .gitignore agar setiap git add file tidak membawa file ke stagging area
+a. buat file .gitignore
+b. isi di dalamnya dengan format berikut
+  1. namafile.extfile = tidak add file sesuai nama file dan extensi yang di cantumkan
+  2. namafolder/ = tidak add folder sesuai nama folder yang di cantumkan
+  3. *.exe = tidak add seluruh file exe
+
+18. Link membuka saran dari github file yang sebaiknya masuk ke gitignore
+a. github.com/github/gitignore/
+b. gitignore.io
