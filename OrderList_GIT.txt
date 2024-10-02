@@ -55,3 +55,6 @@ b. isi di dalamnya dengan format berikut
 17. Link membuka saran dari github file yang sebaiknya masuk ke gitignore
 a. github.com/github/gitignore/
 b. gitignore.io
+
+18. Hapus file dari staging area tanpa menghapusnya dari disk
+git rm --cached file_yang_akan_diabaikan.txt
