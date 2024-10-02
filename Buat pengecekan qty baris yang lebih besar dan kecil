@@ -1,0 +1,42 @@
+procedure tficslm_in.dgridqtypropertiesvalidate(sender: tobject;
+  var displayvalue: variant; var errortext: tcaption; var error: boolean);
+var
+   a: tcxcustomcurrencyeditproperties;
+   nqty, limit: double;
+   limitStr: string;
+begin
+   if not lenablecontrols then exit;
+
+   // Reset error state
+   error := False; 
+   
+   tmyvalid(a).strtofloatex(vartostr(displayvalue), nqty);
+   if not mastdata.checkvalidfraction(icslsstockid.asstring, nqty) then begin
+      errortext := 'error in small unit qty !';
+      error := true;
+      displayvalue := formatfloat(xqtyformat, 0);
+      exit; // keluar dari prosedur jika ada kesalahan
+   end;
+
+   // Ambil nilai lblslimit.Caption dan hilangkan pemisah ribuan (koma)
+   limitStr := StringReplace(lblslimit.Caption, ',', '', [rfReplaceAll]);
+
+   // Coba konversi teks ke Float
+   if TryStrToFloat(limitStr, limit) then
+   begin
+     limit := limit / icslsunitprc.AsInteger;
+
+     // Jika qty melebihi limit
+     if nqty >= limit then  // Gunakan nqty yang sudah diperbarui
+     begin
+       ShowMessage('Saldo Kelebihan');
+       error := True; // Tandai sebagai error jika diperlukan
+       displayvalue := formatfloat(xqtyformat, 0); // Set kembali displayvalue jika error
+     end;
+   end
+   else
+   begin
+     ShowMessage('Nilai limit tidak valid: ' + lblslimit.Caption);
+     error := True; // Kesalahan karena nilai limit tidak valid
+   end;
+end;
