@@ -1,0 +1,2 @@
+USE bma25;
+ALTER TABLE icslm ADD addnik VARCHAR(255);
