@@ -1,0 +1,8 @@
+CREATE TABLE `bm`.`custdata`  (
+  `kode` varchar(30) NOT NULL,
+  `userid` varchar(30) NOT NULL,
+  `columnname` varchar(30) NOT NULL,
+  `pilih` tinyint(4) NOT NULL,
+  `defview` tinyint(4) NOT NULL,
+  PRIMARY KEY (`kode`, `userid`)
+) ENGINE = MyISAM AVG_ROW_LENGTH = 999 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci MAX_ROWS = 1000000000 PACK_KEYS = 0 ROW_FORMAT = DYNAMIC;
