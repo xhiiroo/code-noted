@@ -1,0 +1,5 @@
+UPDATE sthist
+SET spcode = '9900000069'
+WHERE TANGGAL BETWEEN '2024-08-01' AND '2024-09-30'
+AND stockid = '122001'
+AND spcode = 'JB42060';
