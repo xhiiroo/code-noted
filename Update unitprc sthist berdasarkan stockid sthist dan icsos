@@ -1,0 +1,4 @@
+UPDATE sthist AS s
+JOIN icsos AS i ON s.stockid = i.stockid
+SET s.unitprc = i.unitprc
+WHERE s.nofaktur = 'SILD24080075' AND i.becreff = '973133';
