@@ -1,0 +1,6 @@
+UPDATE icslm i
+JOIN customer c ON i.custid = c.id
+SET i.idnik = c.mbshipno
+WHERE i.TGLFAKTUR BETWEEN '2025-01-01' AND '2025-01-26'
+  AND (i.idnik = '' OR i.idnik IS NULL)
+  AND i.tipe = 1;
