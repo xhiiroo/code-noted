@@ -1,0 +1,4 @@
+SELECT id, name, npwp
+FROM customer
+WHERE CHAR_LENGTH(npwp) = 20
+ORDER BY id;
