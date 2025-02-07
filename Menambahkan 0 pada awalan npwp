@@ -1,3 +1,5 @@
 UPDATE customer
 SET npwp = LPAD(npwp, 21, '0')
-WHERE CHAR_LENGTH(npwp) = 20;
+WHERE CHAR_LENGTH(npwp) < 21 ;
+
+// Ubah angka 21 sesuai dengan kebutuhan
