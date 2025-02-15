@@ -1,0 +1,6 @@
+UPDATE icarea
+SET areacode = REPLACE(areacode, '.', '')
+WHERE areacode LIKE '%.%';
+
+# Memeriksa data terlebih dahulu
+SELECT areacode, REPLACE(areacode, '.', '') AS new_areacode FROM icarea WHERE areacode LIKE '%.%';
