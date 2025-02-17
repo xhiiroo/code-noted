@@ -1,0 +1,4 @@
+insert ignore into vichist (stockid, suppid, code2, lastedit, userid, tglberlaku)
+select e.stockid, e.id, e.code2, NOW(), "BM", k.awalbeli
+from suppprice e
+left join stock k on k.stockid = e.stockid;
