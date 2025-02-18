@@ -1,0 +1,4 @@
+update icslm i
+join tablecoba t
+ON i.primary_key = t.primary_key -- Sesuaikan dengan kolom yang menjadi kunci untuk menghubungkan kedua tabel
+SET i.noseripajak = t.noseripajak;
