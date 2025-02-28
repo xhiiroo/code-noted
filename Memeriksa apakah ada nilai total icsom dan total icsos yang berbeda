@@ -1,0 +1,11 @@
+SELECT 
+    icsom.becreff, 
+    icsom.nofaktur, 
+    icsom.jlhtotal,
+    (SELECT SUM(amount) FROM icsos WHERE icsos.becreff = icsom.becreff) AS sumos 
+FROM 
+    icsom
+WHERE 
+    tglfaktur = CURDATE()
+HAVING 
+    jlhtotal <> sumos OR sumos IS NULL;
