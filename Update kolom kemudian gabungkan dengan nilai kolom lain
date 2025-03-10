@@ -1,0 +1,11 @@
+update icsom
+set pesan = case 
+                when uraian is null or uraian = '' then 'Anak SO Kosong'
+                else CONCAT('Anak SO Kosong | ', uraian)
+            end,
+    jlhdpp = 0, 
+    jlhfaktur = 0,
+    jlhppn = 0, 
+    jlhtotal = 0,
+		uraian = null
+where becreff = '678161';
