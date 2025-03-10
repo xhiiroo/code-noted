@@ -1,0 +1,4 @@
+select * from icsom where becreff not in (select becreff from icsos) and tglfaktur between '2025-03-05' and '2025-03-07';
+
+-- Jika ingin menampilkan data yang bernilai
+select * from icsom where becreff not in (select becreff from icsos) and tglfaktur between '2025-03-05' and '2025-03-07' and jlhdpp <> 0 and jlhfaktur <> 0 and jlhppn <> 0 and jlhtotal <> 0;
