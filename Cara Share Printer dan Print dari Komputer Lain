@@ -1,0 +1,33 @@
+Cara sharing printer di jaringan lokal (LAN) tergantung pada sistem operasi yang digunakan. Berikut adalah langkah-langkahnya untuk Windows:
+
+1. Pastikan Printer Terhubung dan Berfungsi
+Pastikan printer sudah terpasang dan bisa mencetak dari komputer utama.
+Gunakan Control Panel → Devices and Printers untuk memastikan printer terlihat.
+
+2. Aktifkan Printer Sharing
+Di Windows 10/11
+Buka Control Panel (tekan Win + R, ketik control, tekan Enter).
+Pilih Devices and Printers.
+Klik kanan pada printer yang ingin di-share, lalu pilih Printer properties.
+Masuk ke tab Sharing, lalu centang Share this printer.
+Beri nama printer (misalnya: "Printer-Kantor") dan klik OK.
+
+3. Atur Pengaturan Jaringan
+Buka Control Panel → Network and Sharing Center.
+Klik Change advanced sharing settings.
+Aktifkan:
+Turn on network discovery
+Turn on file and printer sharing
+Jika ingin semua orang bisa mengakses tanpa login, pilih Turn off password protected sharing.
+
+4. Hubungkan Komputer Lain ke Printer yang Dibagikan
+Metode 1: Menggunakan Nama Jaringan Printer
+Buka Control Panel → Devices and Printers di komputer lain.
+Klik Add a printer → Add a network, wireless, or Bluetooth printer.
+Pilih printer yang sudah dibagikan.
+Klik Next dan ikuti petunjuk untuk menyelesaikan instalasi.
+
+Metode 2: Menggunakan IP atau Nama Komputer
+Tekan Win + R, ketik \\[NamaKomputer] atau \\[IP Komputer] (contoh: \\192.168.1.100), lalu tekan Enter.
+Cari printer yang dibagikan, klik kanan, lalu pilih Connect.
+Windows akan mengunduh driver printer secara otomatis.
