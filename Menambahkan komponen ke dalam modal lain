@@ -1,0 +1,18 @@
+Var chksplitstockid: TcxCheckBox;
+
+if fcreate_pr = nil then
+      fcreate_pr := Tfcreate_pr.create(application);
+
+fcreate_pr.besupp.Text := localrtbymsuppid.AsString;
+fcreate_pr.dttanggal.Date := localrtbymtglfaktur.AsDateTime;
+fcreate_pr.lcwh.Text := localrtbymwhid.AsString;
+fcreate_pr.cbnilai.ItemIndex := 0;
+fcreate_pr.chkdouble.Caption := 'Split By Item Desc.';
+fcreate_pr.chkdouble.Checked := true;
+
+// Kode Menambahkan komponen 
+chksplitstockid := TcxCheckBox.Create(fcreate_pr);
+chksplitstockid.Parent := fcreate_pr;
+chksplitstockid.Left := 16;
+chksplitstockid.Top := 224;
+chksplitstockid.Caption := 'Split By Stock Id';
