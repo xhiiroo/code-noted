@@ -1,0 +1,105 @@
+SELECT 
+    k.becreff,
+    k.staffid, 
+    k.nobukti,
+		k.TglBukti,
+		k.dbowner AS user_create, 
+    v.sourceid, 
+    MAX(cust.name) AS name,
+    SUM(v.amount) AS amount,
+		SUM(v.paid) AS paid,
+    b.giro,
+    tf.tfbank
+FROM draftinv v
+LEFT JOIN kasbank k 
+    ON k.becreff = v.becreff
+LEFT JOIN customer cust
+    ON cust.id = v.sourceid
+LEFT JOIN (
+    SELECT o.becreff, o.custid, k.nobukti, SUM(o.nilaigiro) AS giro
+    FROM draftgiro o 
+    LEFT JOIN kasbank k 
+        ON k.becreff = o.becreff 
+    WHERE 
+-- 				k.staffid = 12 and -- Aktifkan untuk filter sales tertentu
+        k.tglbukti BETWEEN '2024-01-01' AND CURDATE()
+    GROUP BY o.custid, k.nobukti, o.becreff
+) b 
+    ON b.becreff = k.becreff 
+    AND b.nobukti = k.nobukti
+    AND b.custid = v.sourceid
+LEFT JOIN (
+    SELECT m.becreff, m.custid, k.nobukti, SUM(m.jumlah) AS tfbank 
+    FROM kasbankitem m 
+    LEFT JOIN kasbank k 
+        ON k.becreff = m.becreff 
+    WHERE m.tipe = 2 
+--         AND k.staffid = 12 -- Aktifkan untuk filter sales tertentu
+        AND k.tglbukti BETWEEN '2024-01-01' AND CURDATE()
+    GROUP BY m.custid, k.nobukti, m.becreff
+) tf  
+    ON tf.becreff = k.becreff 
+    AND tf.nobukti = k.nobukti
+    AND tf.custid = v.sourceid
+WHERE 
+-- 		k.staffid = 12 and -- Aktifkan untuk filter sales tertentu
+    k.tglbukti BETWEEN '2024-01-01' AND CURDATE()
+GROUP BY v.sourceid, k.nobukti
+order by k.tglbukti;
+
+
+--------------------------------------------------------------------
+
+
+-- Versi Create Tmp Table
+CREATE TABLE `tmp_coba`.test1233
+SELECT * FROM (
+    SELECT 
+        k.becreff,
+        k.staffid, 
+        k.nobukti,
+				k.TglBukti,
+				k.dbowner AS user_create, 
+        v.sourceid, 
+        MAX(c.name) AS name,
+        SUM(v.amount) AS amount,
+				SUM(v.paid) AS paid
+    FROM draftinv v
+    LEFT JOIN kasbank k ON k.becreff = v.becreff
+    LEFT JOIN customer c ON c.id = v.sourceid
+    WHERE k.tglbukti BETWEEN '2024-01-01' AND CURDATE()
+-- 		and k.staffid = 12 -- Aktifkan untuk filter sales tertentu
+    GROUP BY v.sourceid, k.nobukti
+) AS subquery;
+
+CREATE TABLE `tmp_coba`.test1234
+select * from (
+select o.becreff, o.custid, k.nobukti, SUM(o.nilaigiro) as giro from draftgiro o left join kasbank k on k.becreff = o.becreff 
+where k.tglbukti between '2024-01-01' and CURDATE() 
+-- and k.staffid = 12 -- Aktifkan untuk filter sales tertentu
+group by o.custid, k.nobukti
+) as subquery;
+
+CREATE TABLE `tmp_coba`.test1235
+select * from (
+select m.becreff, m.custid, k.nobukti, SUM(m.jumlah) as tfbank from kasbankitem m left join kasbank k on k.becreff = m.becreff 
+where m.tipe=2 and k.tglbukti between '2024-01-01' and CURDATE()
+-- and k.staffid = 12 -- Aktifkan untuk filter sales tertentu
+group by m.custid, k.nobukti
+order by k.nobukti, m.custid
+) as subquery;
+
+SELECT a.*, b.giro, c.tfbank 
+FROM `tmp_coba`.test1233 a
+LEFT JOIN `tmp_coba`.test1234 b 
+ON b.becreff = a.becreff 
+AND b.nobukti = a.nobukti
+AND b.custid = a.sourceid
+LEFT JOIN `tmp_coba`.test1235 c 
+ON c.becreff = a.becreff 
+AND c.nobukti = a.nobukti
+AND c.custid = a.sourceid;
+
+drop table if exists `tmp_coba`.test1233;
+drop table if exists `tmp_coba`.test1234;
+drop table if exists `tmp_coba`.test1235;
