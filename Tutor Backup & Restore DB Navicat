@@ -1,0 +1,11 @@
+// Tutor Backup NB3
+1. Klik Database yang akan di backup
+2. Cari menu Backups di Posisi ke 5 dan klik tab Objects
+3. Klik New Backup -> Klik Backup
+4. Apabila sudah selesai Klik Backup lagi
+
+// Tutor Restore
+1. Klik Database yang akan di backup
+2. Cari menu Backups di Posisi ke 5 dan klik tab Objects
+3. Klik kanan Restore Backup From...
+4. Cari file kemudian Restore
