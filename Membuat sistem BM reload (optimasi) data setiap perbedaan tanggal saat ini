@@ -1,0 +1,2 @@
+select exedate from setup;
+update setup set exedate = '2025-04-14 00:00:00';
