@@ -1,0 +1,40 @@
+// Periksa apakah field 'isselect' sudah ada sebelum menambahkannya
+if invkasmsk.FindField('isselect') = nil then
+   begin
+      invkasmsk.Close;
+      NewField := TSmallintField.Create(Self);
+      try
+         NewField.FieldName := 'isselect';
+         NewField.DataSet := invkasmsk;
+         NewField.Visible := True;
+      except
+         NewField.Free;
+         raise;
+      end;
+   end;
+
+with DGridInvColumn2 do
+   begin
+      DataBinding.FieldName := 'isselect';
+      Caption := 'Select';
+      Options.Editing := True;
+      Visible := True;
+
+      PropertiesClass := TcxCheckBoxProperties;
+      with Properties as TcxCheckBoxProperties do
+         begin
+         ValueChecked := '1';
+         ValueUnchecked := '0';
+         NullStyle := nssUnchecked;
+         end;
+   end;
+
+// Hapus field jika ada
+   FieldToDelete := invkasmsk.FindField('isselect');
+   if FieldToDelete <> nil then
+      FieldToDelete.Free;
+
+   DGridInvColumn2.DataBinding.FieldName := '';
+   DGridInvColumn2.Caption := '';
+   DGridInvColumn2.Options.Editing := False;
+   DGridInvColumn2.Visible := False;
