@@ -1,0 +1,5 @@
+if bitem.RecordCount >= 1 then
+   begin
+      bitem.Edit;
+      Abort;
+   end;
