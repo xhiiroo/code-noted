@@ -1,0 +1,10 @@
+MastData.qtmp.SQL.Clear;
+MastData.qtmp.SQL.Add('update ' + ctbltp + 'di as t ' +
+                        'join ( ' +
+                        '       select sourceid ' +
+                        '       from ' + ctbltp + 'di ' +
+                        '       group by sourceid ' +
+                        '       having count(*) > 1 ' +
+                        '      ) as d ON t.sourceid = d.sourceid ' +
+                        'set t.isselect = 1;');
+MastData.qtmp.Execute;
