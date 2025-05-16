@@ -1,8 +1,8 @@
 // Tutor Backup NB3
 1. Klik Database yang akan di backup
 2. Cari menu Backups di Posisi ke 5 dan klik tab Objects
-3. Klik New Backup -> Klik Backup
-4. Apabila sudah selesai Klik Backup lagi
+3. Klik New Backup -> Klik Save dan tentukan nama
+4. Klik Save dan cari file bak di \Documents\Navicat\MySQL\Servers\server
 
 // Tutor Restore
 1. Klik Database yang akan di backup
