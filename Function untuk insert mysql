@@ -1,0 +1,11 @@
+// Contoh Kode
+procedure tMastData.insertrowso;
+begin
+   FInsertStr := 'insert ignore into setrownd6 (rownoso,rowcustid,rowproductcode,rowqtysold,rowpocust,rowdisc1,rowsprc,slctfname) ' +
+                 'values ("salesordernumber","soldtocustomerid","productcode","qtysold","customerpo","linediscount1","sellingprice","nd6");';
+end;
+
+function tMastData.GetInsertRowso: string;
+begin
+   Result := FInsertStr;
+end;
