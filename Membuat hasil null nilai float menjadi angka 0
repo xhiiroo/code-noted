@@ -1,0 +1,7 @@
+function SafeFloat(F: TField): Double;
+  begin
+    if Assigned(F) and not F.IsNull then
+      Result := F.AsFloat
+    else
+      Result := 0;
+  end;
