@@ -1,0 +1,17 @@
+procedure CheckForNullFloats(DataSet: TDataSet);
+var
+  i: Integer;
+begin
+  DataSet.First;
+  while not DataSet.Eof do
+    begin
+      for i := 0 to DataSet.FieldCount - 1 do
+      begin
+        if (DataSet.Fields[i].DataType in [ftFloat, ftCurrency, ftBCD, ftFMTBcd]) and
+           (DataSet.Fields[i].IsNull) then
+          ShowMessage('Field "' + DataSet.Fields[i].FieldName + '" bernilai NULL pada record ke-' +
+                       IntToStr(DataSet.RecNo));
+      end;
+      DataSet.Next;
+    end;
+end;
