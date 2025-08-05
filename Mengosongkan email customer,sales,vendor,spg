@@ -2,3 +2,4 @@ update vdrctt set email = null, ccmail = null;
 update sales set email = null;
 update customer set addmailsi = null, addmailsd = null, addmailpd = null;
 update spg set mailsi = 0, mailsj = 0;
+update vdrmail set mailadd = null;
