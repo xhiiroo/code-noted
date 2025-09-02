@@ -1,0 +1,1 @@
+update invmn set isvalid = 0, uservalid = null, waktuvalid = null where reffno = 'IR25080925';
