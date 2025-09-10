@@ -1,0 +1,5 @@
+// Default
+cxExportPivotGridToExcel( mastdata.savedialog.filename, dgrids02 )
+
+// Paksa Collapse Semua
+cxExportPivotGridToExcel( mastdata.savedialog.filename, dgrids02, False, True )
