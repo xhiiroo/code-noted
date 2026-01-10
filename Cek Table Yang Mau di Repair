@@ -1,0 +1,4 @@
+SELECT
+  CONCAT('CHECK TABLE ', table_name, ';') AS sql_check
+FROM information_schema.tables
+WHERE table_schema = DATABASE();
