@@ -1,0 +1,9 @@
+Sebelum memulai langkah di bawah, pastikan sudah 
+tidak ada versi sophos yang terinstall di komputer
+
+1. Masuk ke https://110.232.80.2
+2. Isi user name & paswort VPN
+4. Klik Download for Windows
+5. VPN Configuration pilih Use with sophos connect and 
+   openvpn connect v2 clients
+6. Instal sampai selesai.
