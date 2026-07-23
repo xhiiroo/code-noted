@@ -1,0 +1,9 @@
+select concat(
+    'update `',
+    table_schema,
+    '`.module set ',
+    'uraian = "Cek DP Customer", uraianind = "Cek DP Customer" ',
+    'where nourut = ''205'';'
+) as sql_update
+from information_schema.tables
+where table_name = 'module';
