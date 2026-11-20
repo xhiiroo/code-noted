@@ -1,0 +1,6 @@
+select table_name
+from information_schema.columns
+where table_schema = database()
+and column_name in ('usrowner', 'usredit')
+group by table_name
+order by table_name;
